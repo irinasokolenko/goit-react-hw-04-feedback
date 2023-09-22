@@ -5,7 +5,7 @@ import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
 import { Notification } from './Notification/Notification';
 
-export class App = () => {
+export const App = () => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
@@ -26,8 +26,8 @@ export class App = () => {
      }
   };
 
-  const countTotalFeedback = () => {
-    return Object.values(obt).reduce((total, curr) => (total += curr));
+  const countTotalFeedback = obj => {
+    return Object.values(obj).reduce((total, curr) => (total += curr));
   };
 
    const countPositiveFeedbackPercentage = totalFeedback => {
